@@ -1,94 +1,118 @@
-/* Base & reset */
-body {
+/* Base */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: #0b0b0b;
-    color: #eaeaea;
-    font-family: 'Inter', 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: #f0f0f0;
     line-height: 1.6;
 }
 
-/* Navigation bar */
-nav {
-    background: #121212;
-    padding: 15px 30px;
+/* Navbar */
+.navbar {
     display: flex;
-    gap: 40px;
-    border-bottom: 1px solid #222;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,#1b1b1b,#242424);
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
-nav a {
-    color: #eaeaea;
+.navbar .logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: #4ea3ff;
+}
+
+.navbar .links a {
+    margin-left: 25px;
+    color: #f0f0f0;
     text-decoration: none;
-    font-size: 16px;
     font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    transition: 0.2s;
 }
 
-nav a:hover {
-    background: #1db95433; /* translucent green */
-    color: #1db954;
-    transform: translateY(-2px);
+.navbar .links a:hover {
+    color: #4ea3ff;
 }
 
-/* Container for main content */
-.container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 40px 25px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+/* Main Container */
+.main-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Card style for dashboard elements */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    color: #4ea3ff;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #bbb;
+    font-size: 18px;
+}
+
+/* Cards */
 .card {
-    background: linear-gradient(145deg, #1b1b1b, #151515);
+    background: #181818;
+    padding: 30px 25px;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* Headings */
-h1, h2, h3 {
-    color: #f5f5f5;
-    margin-bottom: 20px;
+.card h2 {
+    color: #4ea3ff;
+    margin-bottom: 15px;
 }
 
-h2 {
-    font-size: 1.5rem;
+.card ul {
+    list-style: disc inside;
+    margin-bottom: 15px;
 }
 
-/* Links inside cards */
+.card li {
+    margin-bottom: 8px;
+}
+
 .card a {
-    color: #1db954;
+    color: #4ea3ff;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .card a:hover {
     text-decoration: underline;
 }
 
-/* Subtle accent text */
-.small-text {
-    color: #aaa;
-    font-size: 0.9rem;
-}
+/* Responsive */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* Smooth transitions for everything */
-* {
-    transition: all 0.25s ease;
+    .navbar .links a {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
